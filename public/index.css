@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "Helios";
+  src: url("/public/fonts/HeliosExtC_Regular.otf");
+}
+@font-face {
+  font-family: "Helios Bold";
+  src: url("/public/fonts/HeliosExtC_Bold.otf");
+}
+
+body {
+  background-color: #181818;
+   font-family: "Helios";
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
