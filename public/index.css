@@ -2,6 +2,7 @@
   font-family: "Helios";
   src: url("/public/fonts/HeliosExtC_Regular.otf");
 }
+
 @font-face {
   font-family: "Helios Bold";
   src: url("/public/fonts/HeliosExtC_Bold.otf");
@@ -9,11 +10,41 @@
 
 body {
   background-color: #181818;
-   font-family: "Helios";
+  font-family: "Helios";
 }
 
 @media print {
   .no-print {
     display: none !important;
   }
+}
+
+.controls {
+  display: flex;
+  gap: .5rem;
+}
+
+.controls button {
+  background: black;
+  border: none;
+  color: rgb(206, 206, 206);
+  padding: .5rem 1rem;
+  cursor: pointer;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.controls button:hover {
+  color: white;
+}
+
+.controls select {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: .5rem 1rem;
+  background: black;
+  color: rgb(206, 206, 206);
 }

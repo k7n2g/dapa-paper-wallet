@@ -6,8 +6,17 @@
 </head>
 
 <body>
-  <div class="no-print">
-    <button id="generate">Generate</button>
+  <div class="no-print controls">
+    <button id="generate">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" width="20px"
+        version="1.1" id="Capa_1" viewBox="0 0 32 32" xml:space="preserve" fill="currentColor">
+        <path
+          d="M19.945,22l6.008-8L32,22h-4v2c0,3.309-2.691,6-6,6H10c-3.309,0-6-2.691-6-6v-2h4v2     c0,1.102,0.898,2,2,2h12c1.102,0,2-0.898,2-2v-2H19.945z" />
+        <path
+          d="M12.055,10l-6.008,8L0,10h4V8c0-3.309,2.691-6,6-6h12c3.309,0,6,2.691,6,6v2h-4V8     c0-1.102-0.898-2-2-2H10C8.898,6,8,6.898,8,8v2H12.055z" />
+      </svg>
+      Generate
+    </button>
     <select id="bg_select">
       <option value="/public/bg/bg_1.png">Background 1</option>
       <option value="/public/bg/bg_2.png">Background 2</option>
@@ -16,118 +25,127 @@
       <option value="/public/bg/bg_5.png">Background 5</option>
       <option value="/public/bg/bg_6.png">Background 6</option>
     </select>
-    <button id="print" onclick="print()">Print</button>
-  </div>
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="472"
-    viewBox="0 0 952 472" fill="none">
-    <g id="Frame 1" clip-path="url(#clip0_1_3)">
-      <g id="image 2">
-        <rect width="954" height="472" transform="matrix(1 0 0 -1 -2 472)" fill="url(#pattern0_1_3)" />
-        <rect width="954" height="472" transform="matrix(1 0 0 -1 -2 472)" fill="url(#paint0_linear_1_3)" />
-      </g>
-      <g id="Rectangle 66" filter="url(#filter0_b_1_3)">
-        <rect x="782" y="-2" width="170" height="283" fill="#02FFCF" fill-opacity="0.24" />
-      </g>
-      <g id="Rectangle 67" filter="url(#filter1_b_1_3)">
-        <rect y="-2" width="170" height="283" fill="#02FFCF" fill-opacity="0.24" />
-      </g>
-      <rect id="qr-code 1" x="17" y="60" width="136" height="136" fill="url(#pattern1_1_3)" />
-      <text fill="white" xml:space="preserve" font-size="16" font-weight="bold" letter-spacing="0em">
-        <tspan x="40" y="220" id="lbl_address">ADDRESS</tspan>
-      </text>
-      <text fill="white" xml:space="preserve" font-size="16" font-weight="bold" letter-spacing="0em">
-        <tspan x="815" y="220" id="lbl_private_key">PRIVATE KEY</tspan>
-      </text>
-      <rect id="qr-code 2" x="800" y="60" width="136" height="136" fill="url(#pattern2_1_3)" />
-      <g id="Rectangle 68" filter="url(#filter2_b_1_3)">
-        <rect y="281" width="952" height="191" fill="black" fill-opacity="0.5" />
-      </g>
-      <text
-        id="toto vehicle africa speed lonely basic word traffic level plank lower down up jewel leverage music echo bravo johny yoyo book table"
-        fill="white" xml:space="preserve" font-size="14" letter-spacing="0em">
-        <tspan x="17" y="422" id="seed_value_line_1"></tspan>
-        <tspan x="17" y="442" id="seed_value_line_2"></tspan>
-      </text>
-      <text id="Seed" fill="white" xml:space="preserve" font-size="20" font-weight="bold" letter-spacing="0em">
-        <tspan x="17" y="392.273">Seed</tspan>
-      </text>
-      <text id="Address" fill="white" xml:space="preserve" font-size="20" font-weight="bold" letter-spacing="0em">
-        <tspan x="17" y="316.273">Address</tspan>
-      </text>
-      <text id="Private Key" fill="white" xml:space="preserve" font-size="20" font-weight="bold" letter-spacing="0em">
-        <tspan x="17" y="352.273">Private Key</tspan>
-      </text>
-      <g id="Ellipse 1" filter="url(#filter3_b_1_3)">
-        <circle cx="459" cy="139" r="105" fill="black" fill-opacity="0.5" />
-      </g>
-      <g id="Rectangle 64 (Stroke)">
+    <button id="print" onclick="print()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
-          d="M459 209L531 136.754L465.507 71.0376L475.644 95.6579L516.6 136.754L459 194.551L401.4 136.754L442.449 94.9862L452.53 71L387 136.754L459 209Z"
-          fill="#02FFCF" />
-        <path d="M459 194.551L452.53 71L442.449 94.9862L459 194.551Z" fill="#02FFCF" />
-        <path d="M465.507 71.0376L459 194.551L475.644 95.6579L465.507 71.0376Z" fill="#02FFCF" />
+          d="M17 7H7V6h10v1zm0 12H7v-6h10v6zm2-12V3H5v4H1v8.996C1 17.103 1.897 18 3.004 18H5v3h14v-3h1.996A2.004 2.004 0 0 0 23 15.996V7h-4z"
+          fill="currentColor" />
+      </svg>
+      Print
+    </button>
+  </div>
+  <div>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="472"
+      viewBox="0 0 952 472" fill="none">
+      <g id="Frame 1" clip-path="url(#clip0_1_3)">
+        <g id="image 2">
+          <rect width="954" height="472" transform="matrix(1 0 0 -1 -2 472)" fill="url(#pattern0_1_3)" />
+          <rect width="954" height="472" transform="matrix(1 0 0 -1 -2 472)" fill="url(#paint0_linear_1_3)" />
+        </g>
+        <g id="Rectangle 66" filter="url(#filter0_b_1_3)">
+          <rect x="782" y="-2" width="170" height="283" fill="#02FFCF" fill-opacity="0.24" />
+        </g>
+        <g id="Rectangle 67" filter="url(#filter1_b_1_3)">
+          <rect y="-2" width="170" height="283" fill="#02FFCF" fill-opacity="0.24" />
+        </g>
+        <rect id="qr-code 1" x="17" y="60" width="136" height="136" fill="url(#pattern1_1_3)" />
+        <text fill="white" xml:space="preserve" font-size="16" font-weight="bold" letter-spacing="0em">
+          <tspan x="40" y="220" id="lbl_address">ADDRESS</tspan>
+        </text>
+        <text fill="white" xml:space="preserve" font-size="16" font-weight="bold" letter-spacing="0em">
+          <tspan x="815" y="220" id="lbl_private_key">PRIVATE KEY</tspan>
+        </text>
+        <rect id="qr-code 2" x="800" y="60" width="136" height="136" fill="url(#pattern2_1_3)" />
+        <g id="Rectangle 68" filter="url(#filter2_b_1_3)">
+          <rect y="281" width="952" height="191" fill="black" fill-opacity="0.5" />
+        </g>
+        <text
+          id="toto vehicle africa speed lonely basic word traffic level plank lower down up jewel leverage music echo bravo johny yoyo book table"
+          fill="white" xml:space="preserve" font-size="14" letter-spacing="0em">
+          <tspan x="17" y="422" id="seed_value_line_1"></tspan>
+          <tspan x="17" y="442" id="seed_value_line_2"></tspan>
+        </text>
+        <text id="Seed" fill="white" xml:space="preserve" font-size="20" font-weight="bold" letter-spacing="0em">
+          <tspan x="17" y="392.273">Seed</tspan>
+        </text>
+        <text id="Address" fill="white" xml:space="preserve" font-size="20" font-weight="bold" letter-spacing="0em">
+          <tspan x="17" y="316.273">Address</tspan>
+        </text>
+        <text id="Private Key" fill="white" xml:space="preserve" font-size="20" font-weight="bold" letter-spacing="0em">
+          <tspan x="17" y="352.273">Private Key</tspan>
+        </text>
+        <g id="Ellipse 1" filter="url(#filter3_b_1_3)">
+          <circle cx="459" cy="139" r="105" fill="black" fill-opacity="0.5" />
+        </g>
+        <g id="Rectangle 64 (Stroke)">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M459 209L531 136.754L465.507 71.0376L475.644 95.6579L516.6 136.754L459 194.551L401.4 136.754L442.449 94.9862L452.53 71L387 136.754L459 209Z"
+            fill="#02FFCF" />
+          <path d="M459 194.551L452.53 71L442.449 94.9862L459 194.551Z" fill="#02FFCF" />
+          <path d="M465.507 71.0376L459 194.551L475.644 95.6579L465.507 71.0376Z" fill="#02FFCF" />
+        </g>
+        <text fill="white" xml:space="preserve" text-anchor="end" font-size="16" letter-spacing="0em">
+          <tspan x="975" y="315" t id="address_value"></tspan>
+        </text>
+        <text fill="white" xml:space="preserve" text-anchor="end" font-size="16" letter-spacing="0em">
+          <tspan x="975" y="350" id="private_key_value"></tspan>
+        </text>
+        <text id="XELIS Paper Wallet" fill="white" xml:space="preserve" font-size="30" font-weight="bold"
+          letter-spacing="0em">
+          <tspan x="310" y="250">XELIS Paper Wallet</tspan>
+        </text>
       </g>
-      <text fill="white" xml:space="preserve" text-anchor="end" font-size="16" letter-spacing="0em">
-        <tspan x="975" y="315" t id="address_value"></tspan>
-      </text>
-      <text fill="white" xml:space="preserve" text-anchor="end" font-size="16" letter-spacing="0em">
-        <tspan x="975" y="350" id="private_key_value"></tspan>
-      </text>
-      <text id="XELIS Paper Wallet" fill="white" xml:space="preserve" font-size="30" font-weight="bold"
-        letter-spacing="0em">
-        <tspan x="310" y="250">XELIS Paper Wallet</tspan>
-      </text>
-    </g>
-    <defs>
-      <pattern id="pattern0_1_3" patternContentUnits="objectBoundingBox" width="1" height="1">
-        <use xlink:href="#bg_img" transform="matrix(0.0005 0 0 0.00101059 0 -0.257945)" />
-      </pattern>
-      <filter id="filter0_b_1_3" x="761.3" y="-22.7" width="211.4" height="324.4" filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feGaussianBlur in="BackgroundImageFix" stdDeviation="10.35" />
-        <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_3" />
-        <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_3" result="shape" />
-      </filter>
-      <filter id="filter1_b_1_3" x="-20.7" y="-22.7" width="211.4" height="324.4" filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feGaussianBlur in="BackgroundImageFix" stdDeviation="10.35" />
-        <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_3" />
-        <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_3" result="shape" />
-      </filter>
-      <pattern id="pattern1_1_3" patternContentUnits="objectBoundingBox" width="1" height="1">
-        <use xlink:href="#qrcode_address_img" transform="scale(0.000625)" />
-      </pattern>
-      <pattern id="pattern2_1_3" patternContentUnits="objectBoundingBox" width="1" height="1">
-        <use xlink:href="#qrcode_private_key_img" transform="scale(0.000625)" />
-      </pattern>
-      <filter id="filter2_b_1_3" x="-15" y="266" width="982" height="221" filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feGaussianBlur in="BackgroundImageFix" stdDeviation="7.5" />
-        <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_3" />
-        <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_3" result="shape" />
-      </filter>
-      <filter id="filter3_b_1_3" x="339" y="19" width="240" height="240" filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feGaussianBlur in="BackgroundImageFix" stdDeviation="7.5" />
-        <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_3" />
-        <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_3" result="shape" />
-      </filter>
-      <linearGradient id="paint0_linear_1_3" x1="477" y1="0" x2="477" y2="472" gradientUnits="userSpaceOnUse">
-        <stop stop-opacity="0" />
-        <stop offset="1" />
-      </linearGradient>
-      <clipPath id="clip0_1_3">
-        <rect width="952" height="472" fill="white" />
-      </clipPath>
-      <image id="bg_img" width="2000" height="1500" xlink:href="/public/bg/bg_1.png" />
-      <image id="qrcode_address_img" width="1600" height="1600" xlink:href="" />
-      <image id="qrcode_private_key_img" width="1600" height="1600" xlink:href="" />
-    </defs>
-  </svg>
+      <defs>
+        <pattern id="pattern0_1_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlink:href="#bg_img" transform="matrix(0.0005 0 0 0.00101059 0 -0.257945)" />
+        </pattern>
+        <filter id="filter0_b_1_3" x="761.3" y="-22.7" width="211.4" height="324.4" filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feGaussianBlur in="BackgroundImageFix" stdDeviation="10.35" />
+          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_3" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_3" result="shape" />
+        </filter>
+        <filter id="filter1_b_1_3" x="-20.7" y="-22.7" width="211.4" height="324.4" filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feGaussianBlur in="BackgroundImageFix" stdDeviation="10.35" />
+          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_3" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_3" result="shape" />
+        </filter>
+        <pattern id="pattern1_1_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlink:href="#qrcode_address_img" transform="scale(0.000625)" />
+        </pattern>
+        <pattern id="pattern2_1_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlink:href="#qrcode_private_key_img" transform="scale(0.000625)" />
+        </pattern>
+        <filter id="filter2_b_1_3" x="-15" y="266" width="982" height="221" filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feGaussianBlur in="BackgroundImageFix" stdDeviation="7.5" />
+          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_3" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_3" result="shape" />
+        </filter>
+        <filter id="filter3_b_1_3" x="339" y="19" width="240" height="240" filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feGaussianBlur in="BackgroundImageFix" stdDeviation="7.5" />
+          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_3" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_3" result="shape" />
+        </filter>
+        <linearGradient id="paint0_linear_1_3" x1="477" y1="0" x2="477" y2="472" gradientUnits="userSpaceOnUse">
+          <stop stop-opacity="0" />
+          <stop offset="1" />
+        </linearGradient>
+        <clipPath id="clip0_1_3">
+          <rect width="952" height="472" fill="white" />
+        </clipPath>
+        <image id="bg_img" width="2000" height="1500" xlink:href="/public/bg/bg_1.png" />
+        <image id="qrcode_address_img" width="1600" height="1600" xlink:href="" />
+        <image id="qrcode_private_key_img" width="1600" height="1600" xlink:href="" />
+      </defs>
+    </svg>
+  </div>
   <script src="/public/qrious.min.js"></script>
   <script src="/public/xelis_paper_wallet.js"></script>
   <script src="/public/index.js"></script>
