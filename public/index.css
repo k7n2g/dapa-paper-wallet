@@ -19,9 +19,22 @@ body {
   }
 }
 
+/* Controls */
 .controls {
   display: flex;
   gap: .5rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 600px) {
+  .controls {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    flex-wrap: nowrap;
+  }
 }
 
 .controls button {
@@ -48,3 +61,11 @@ body {
   background: black;
   color: rgb(206, 206, 206);
 }
+
+/* Wallet paper 
+.wallet-paper {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}*/

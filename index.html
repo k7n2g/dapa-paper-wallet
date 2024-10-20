@@ -2,7 +2,8 @@
 
 <head>
   <title>XELIS Paper Wallet</title>
-  <link rel="stylesheet" href="/public/index.css" />
+  <link rel="stylesheet" href="/public/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -18,12 +19,12 @@
       Generate
     </button>
     <select id="bg_select">
-      <option value="/public/bg/bg_1.png">Background 1</option>
-      <option value="/public/bg/bg_2.png">Background 2</option>
-      <option value="/public/bg/bg_3.png">Background 3</option>
-      <option value="/public/bg/bg_4.png">Background 4</option>
-      <option value="/public/bg/bg_5.png">Background 5</option>
-      <option value="/public/bg/bg_6.png">Background 6</option>
+      <option value="/public/bg/bg_1.webp">Background 1</option>
+      <option value="/public/bg/bg_2.webp">Background 2</option>
+      <option value="/public/bg/bg_3.webp">Background 3</option>
+      <option value="/public/bg/bg_4.webp">Background 4</option>
+      <option value="/public/bg/bg_5.webp">Background 5</option>
+      <option value="/public/bg/bg_6.webp">Background 6</option>
     </select>
     <button id="print" onclick="print()">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +35,7 @@
       Print
     </button>
   </div>
-  <div>
+  <div class="wallet-paper">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="472"
       viewBox="0 0 952 472" fill="none">
       <g id="Frame 1" clip-path="url(#clip0_1_3)">
@@ -140,7 +141,7 @@
         <clipPath id="clip0_1_3">
           <rect width="952" height="472" fill="white" />
         </clipPath>
-        <image id="bg_img" width="2000" height="1500" xlink:href="/public/bg/bg_1.png" />
+        <image id="bg_img" width="2000" height="1500" xlink:href="/public/bg/bg_1.webp" />
         <image id="qrcode_address_img" width="1600" height="1600" xlink:href="" />
         <image id="qrcode_private_key_img" width="1600" height="1600" xlink:href="" />
       </defs>
