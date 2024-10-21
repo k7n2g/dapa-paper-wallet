@@ -1,5 +1,6 @@
 const { KeyPair } = wasm_bindgen;
 
+// load wasm wallet and generate wallet seed right away
 async function load() {
   await wasm_bindgen();
   generate_wallet();
@@ -7,14 +8,27 @@ async function load() {
 
 load();
 
+// initialize elements for easier access and reuse
+const lbl_testnet = document.getElementById("lbl_testnet");
+const address_value = document.getElementById("address_value");
+const private_key_value = document.getElementById("private_key_value");
+const seed_value_line_1 = document.getElementById("seed_value_line_1");
+const seed_value_line_2 = document.getElementById("seed_value_line_2");
+const qrcode_address_img = document.getElementById("qrcode_address_img");
+const qrcode_private_key_img = document.getElementById("qrcode_private_key_img");
+const btn_generate = document.getElementById("btn_generate");
+const select_db = document.getElementById("select_bg");
+const bg_img = document.getElementById("bg_img");
+const select_network = document.getElementById("select_network");
+
 function generate_wallet() {
-  const network = document.getElementById("select_network").value;
+  const network = select_network.value;
 
   const mainnet = network === "mainnet";
   if (mainnet) {
-    document.getElementById("lbl_testnet").classList.add("hidden");
+    lbl_testnet.classList.add("hidden");
   } else {
-    document.getElementById("lbl_testnet").classList.remove("hidden");
+    lbl_testnet.classList.remove("hidden");
   }
 
   const key_pair = new KeyPair(mainnet);
@@ -25,10 +39,10 @@ function generate_wallet() {
   set_address_qrcode(addr);
   set_private_key_qrcode(private_key);
 
-  document.getElementById("address_value").textContent = addr;
-  document.getElementById("private_key_value").textContent = private_key;
-  document.getElementById("seed_value_line_1").textContent = seed.splice(0, 12).join(" ");
-  document.getElementById("seed_value_line_2").textContent = seed.splice(0, 13).join(" ");
+  address_value.textContent = addr;
+  private_key_value.textContent = private_key;
+  seed_value_line_1.textContent = seed.splice(0, 12).join(" ");
+  seed_value_line_2.textContent = seed.splice(0, 13).join(" ");
 }
 
 function set_address_qrcode(value) {
@@ -43,7 +57,7 @@ function set_address_qrcode(value) {
     value: value
   });
 
-  document.getElementById("qrcode_address_img").setAttribute('xlink:href', qr.toDataURL());
+  qrcode_address_img.setAttribute('xlink:href', qr.toDataURL());
 }
 
 function set_private_key_qrcode(value) {
@@ -58,17 +72,17 @@ function set_private_key_qrcode(value) {
     value: value
   });
 
-  document.getElementById("qrcode_private_key_img").setAttribute('xlink:href', qr.toDataURL());
+  qrcode_private_key_img.setAttribute('xlink:href', qr.toDataURL());
 }
 
-document.getElementById("btn_generate").addEventListener('click', async () => {
+btn_generate.addEventListener('click', async () => {
   generate_wallet();
 });
 
-document.getElementById("select_network").addEventListener('change', (e) => {
+select_network.addEventListener('change', (e) => {
   generate_wallet();
 });
 
-document.getElementById("select_bg").addEventListener('change', (e) => {
-  document.getElementById("bg_img").setAttribute("xlink:href", e.target.value);
+select_bg.addEventListener('change', (e) => {
+  bg_img.setAttribute("xlink:href", e.target.value);
 });
