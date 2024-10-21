@@ -17,9 +17,12 @@ const seed_value_line_2 = document.getElementById("seed_value_line_2");
 const qrcode_address_img = document.getElementById("qrcode_address_img");
 const qrcode_private_key_img = document.getElementById("qrcode_private_key_img");
 const btn_generate = document.getElementById("btn_generate");
-const select_db = document.getElementById("select_bg");
+const select_bg = document.getElementById("select_bg");
 const bg_img = document.getElementById("bg_img");
 const select_network = document.getElementById("select_network");
+const txt_amount = document.getElementById("txt_amount");
+const lbl_amount = document.getElementById("lbl_amount");
+const lbl_amount_value = document.getElementById("lbl_amount_value");
 
 function generate_wallet() {
   const network = select_network.value;
@@ -85,4 +88,14 @@ select_network.addEventListener('change', (e) => {
 
 select_bg.addEventListener('change', (e) => {
   bg_img.setAttribute("xlink:href", e.target.value);
+});
+
+txt_amount.addEventListener('input', (e) => {
+  const value = e.target.value;
+  if (value.length > 0) {
+    lbl_amount.classList.remove("hidden");
+    lbl_amount_value.textContent = e.target.value;
+  } else {
+    lbl_amount.classList.add("hidden");
+  }
 });

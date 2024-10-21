@@ -8,11 +8,11 @@
 
 <body>
   <div class="no-print controls">
-    <select id="select_network">
+    <select id="select_network" title="Change XELIS network.">
       <option value="mainnet">Mainnet</option>
       <option value="testnet">Testnet</option>
     </select>
-    <button id="btn_generate">
+    <button id="btn_generate" title="Generate a new wallet seed.">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" width="20px"
         version="1.1" id="Capa_1" viewBox="0 0 32 32" xml:space="preserve" fill="currentColor">
         <path
@@ -22,7 +22,8 @@
       </svg>
       Generate
     </button>
-    <select id="select_bg">
+    <input id="txt_amount" type="text" placeholder="Amount" title="Display the XEL amount on the wallet paper." />
+    <select id="select_bg" title="Change wallet background paper.">
       <option value="/public/bg/bg_1.webp">Background 1</option>
       <option value="/public/bg/bg_2.webp">Background 2</option>
       <option value="/public/bg/bg_3.webp">Background 3</option>
@@ -30,7 +31,7 @@
       <option value="/public/bg/bg_5.webp">Background 5</option>
       <option value="/public/bg/bg_6.webp">Background 6</option>
     </select>
-    <button id="btn_print" onclick="print()">
+    <button id="btn_print" onclick="print()" title="Print the wallet paper.">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
           d="M17 7H7V6h10v1zm0 12H7v-6h10v6zm2-12V3H5v4H1v8.996C1 17.103 1.897 18 3.004 18H5v3h14v-3h1.996A2.004 2.004 0 0 0 23 15.996V7h-4z"
@@ -105,6 +106,12 @@
             <tspan x="425" y="28">TESTNET</tspan>
           </text>
         </g>
+        <g id="lbl_amount" class="hidden">
+          <rect y="367" x="780" width="150" height="40" fill="white" />
+          <text fill="gray" xml:space="preserve" font-size="20" font-weight="bold" letter-spacing="0em">
+            <tspan x="790" y="395" id="lbl_amount_value"></tspan>
+          </text>
+        </g>
       </g>
       <defs>
         <pattern id="pattern0_1_3" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -161,7 +168,8 @@
     <div>XELIS © 2024 Copyright</div>
     <div>
       This program only makes a server request once, to obtain the program code and assets. The program operates without
-      further server communication.
+      further server communication. Source code available at this <a
+        href="https://github.com/xelis-project/xelis-paper-wallet" target="_blank">Github repo</a>.
     </div>
   </div>
   <script src="/public/qrious.min.js"></script>
