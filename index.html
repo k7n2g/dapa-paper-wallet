@@ -1,18 +1,23 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
   <title>XELIS Paper Wallet</title>
   <link rel="stylesheet" href="/public/index.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="XELIS Paper Wallet">
+  <meta name="keywords" content="xelis, generator, paper, wallet, offline">
 </head>
 
 <body>
   <div class="no-print controls">
-    <select id="select_network" title="Change XELIS network.">
-      <option value="mainnet">Mainnet</option>
-      <option value="testnet">Testnet</option>
+    <select id="select_language" title="Choose seed language." data-t-title="Choose seed language.">
     </select>
-    <button id="btn_generate" title="Generate a new wallet seed.">
+    <select id="select_network" title="Change XELIS network." data-t-title="Change XELIS network.">
+      <option value="mainnet" data-t="Mainnet">Mainnet</option>
+      <option value="testnet" data-t="Testnet">Testnet</option>
+    </select>
+    <button id="btn_generate" title="Generate a new wallet seed." data-t-title="Generate a new wallet seed.">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" width="20px"
         version="1.1" id="Capa_1" viewBox="0 0 32 32" xml:space="preserve" fill="currentColor">
         <path
@@ -20,24 +25,25 @@
         <path
           d="M12.055,10l-6.008,8L0,10h4V8c0-3.309,2.691-6,6-6h12c3.309,0,6,2.691,6,6v2h-4V8     c0-1.102-0.898-2-2-2H10C8.898,6,8,6.898,8,8v2H12.055z" />
       </svg>
-      Generate
+      <span data-t="Generate">Generate</span>
     </button>
-    <input id="txt_amount" type="text" placeholder="Amount" title="Display the XEL amount on the wallet paper." />
-    <select id="select_bg" title="Change wallet background paper.">
-      <option value="/public/bg/bg_1.webp">Background 1</option>
-      <option value="/public/bg/bg_2.webp">Background 2</option>
-      <option value="/public/bg/bg_3.webp">Background 3</option>
-      <option value="/public/bg/bg_4.webp">Background 4</option>
-      <option value="/public/bg/bg_5.webp">Background 5</option>
-      <option value="/public/bg/bg_6.webp">Background 6</option>
+    <input id="txt_amount" type="text" placeholder="Amount" title="Display the XEL amount on the wallet paper."
+      data-t-title="Display the XEL amount on the wallet paper." data-t-placeholder="Amount" />
+    <select id="select_bg" title="Change wallet background paper." data-t-title="Change wallet background paper.">
+      <option value="/public/bg/bg_1.webp" data-t="Background 1">Background 1</option>
+      <option value="/public/bg/bg_2.webp" data-t="Background 2">Background 2</option>
+      <option value="/public/bg/bg_3.webp" data-t="Background 3">Background 3</option>
+      <option value="/public/bg/bg_4.webp" data-t="Background 4">Background 4</option>
+      <option value="/public/bg/bg_5.webp" data-t="Background 5">Background 5</option>
+      <option value="/public/bg/bg_6.webp" data-t="Background 6">Background 6</option>
     </select>
-    <button id="btn_print" onclick="print()" title="Print the wallet paper.">
+    <button id="btn_print" onclick="print()" title="Print the wallet paper." data-t-title="Print the wallet paper.">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
           d="M17 7H7V6h10v1zm0 12H7v-6h10v6zm2-12V3H5v4H1v8.996C1 17.103 1.897 18 3.004 18H5v3h14v-3h1.996A2.004 2.004 0 0 0 23 15.996V7h-4z"
           fill="currentColor" />
       </svg>
-      Print
+      <span data-t="Print">Print</span>
     </button>
   </div>
   <div class="wallet-paper">
@@ -55,11 +61,13 @@
           <rect y="-2" width="170" height="283" fill="#02FFCF" fill-opacity="0.24" />
         </g>
         <rect id="qr-code 1" x="17" y="60" width="136" height="136" fill="url(#pattern1_1_3)" />
-        <text fill="white" xml:space="preserve" font-size="16" font-weight="bold" letter-spacing="0em">
-          <tspan x="40" y="220" id="lbl_address">ADDRESS</tspan>
+        <text fill="white" xml:space="preserve" font-size="16" font-weight="bold" letter-spacing="0em"
+          text-anchor="middle" x="80" y="220">
+          <tspan data-t="ADDRESS">ADDRESS</tspan>
         </text>
-        <text fill="white" xml:space="preserve" font-size="16" font-weight="bold" letter-spacing="0em">
-          <tspan x="815" y="220" id="lbl_private_key">PRIVATE KEY</tspan>
+        <text fill="white" xml:space="preserve" font-size="16" font-weight="bold" letter-spacing="0em"
+          text-anchor="middle" x="864" y="220">
+          <tspan data-t="PRIVATE KEY">PRIVATE KEY</tspan>
         </text>
         <rect id="qr-code 2" x="800" y="60" width="136" height="136" fill="url(#pattern2_1_3)" />
         <g id="Rectangle 68" filter="url(#filter2_b_1_3)">
@@ -72,13 +80,13 @@
           <tspan x="17" y="452" id="seed_value_line_2"></tspan>
         </text>
         <text id="Seed" fill="white" xml:space="preserve" font-size="20" font-weight="bold" letter-spacing="0em">
-          <tspan x="17" y="405">Seed</tspan>
+          <tspan x="17" y="405" data-t="Seed">Seed</tspan>
         </text>
         <text id="Address" fill="white" xml:space="preserve" font-size="20" font-weight="bold" letter-spacing="0em">
-          <tspan x="17" y="316.273">Address</tspan>
+          <tspan x="17" y="316.273" data-t="Address">Address</tspan>
         </text>
         <text id="Private Key" fill="white" xml:space="preserve" font-size="20" font-weight="bold" letter-spacing="0em">
-          <tspan x="17" y="352.273">Private Key</tspan>
+          <tspan x="17" y="352.273" data-t="Private Key">Private Key</tspan>
         </text>
         <g id="Ellipse 1" filter="url(#filter3_b_1_3)">
           <circle cx="475" cy="139" r="105" fill="black" fill-opacity="0.5" />
@@ -91,20 +99,19 @@
           <path d="M481.507 71.0376L475 194.551L491.644 95.6579L481.507 71.0376Z" fill="#02FFCF" />
         </g>
         <text fill="white" xml:space="preserve" text-anchor="end" font-size="16" letter-spacing="0em">
-          <tspan x="975" y="315" t id="address_value"></tspan>
+          <tspan x="980" y="315" t id="address_value"></tspan>
         </text>
         <text fill="white" xml:space="preserve" text-anchor="end" font-size="16" letter-spacing="0em">
-          <tspan x="975" y="350" id="private_key_value"></tspan>
+          <tspan x="980" y="350" id="private_key_value"></tspan>
         </text>
         <text id="XELIS Paper Wallet" fill="white" xml:space="preserve" font-size="30" font-weight="bold"
-          letter-spacing="0em">
-          <tspan x="325" y="250">XELIS Paper Wallet</tspan>
+          letter-spacing="0em" text-anchor="middle" x="470" y="250">
+          <tspan data-t="XELIS Paper Wallet">XELIS Paper Wallet</tspan>
         </text>
         <g id="lbl_testnet" class="hidden">
           <rect y="0" x="400" width="150" height="40" fill="red" />
-          <text fill="white" xml:space="preserve" font-size="20" font-weight="bold" letter-spacing="0em">
-            <tspan x="425" y="28">TESTNET</tspan>
-          </text>
+          <text fill="white" xml:space="preserve" font-size="20" font-weight="bold" text-anchor="middle"
+            letter-spacing="0em" x="475" y="28" data-t="TESTNET">TESTNET</text>
         </g>
         <g id="lbl_amount" class="hidden">
           <rect y="367" x="780" width="150" height="40" fill="white" />
@@ -165,14 +172,19 @@
     </svg>
   </div>
   <div class="footer no-print">
-    <div>XELIS © 2024 Copyright</div>
+    <div data-t="XELIS © 2024 Copyright">XELIS © 2024 Copyright</div>
     <div>
-      This program only makes a server request once, to obtain the program code and assets. The program operates without
-      further server communication. Source code available at this <a
-        href="https://github.com/xelis-project/xelis-paper-wallet" target="_blank">Github repo</a>.
+      <span data-t="This program only makes a server request once, to obtain the program code and assets. The program operates without
+      further server communication.">This program only makes a server request once, to obtain the program code and
+        assets. The program operates without further server communication.</span>
+      <span data-t="Source code available at this">Source code available at this</span>
+      <a href="https://github.com/xelis-project/xelis-paper-wallet" target="_blank">Github repo</a>.
     </div>
   </div>
   <script src="/public/qrious.min.js"></script>
   <script src="/public/xelis_paper_wallet.js"></script>
+  <script src="/public/lang.js"></script>
   <script src="/public/index.js"></script>
 </body>
+
+</html>

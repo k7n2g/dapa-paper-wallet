@@ -1,12 +1,4 @@
-const { KeyPair } = wasm_bindgen;
-
-// load wasm wallet and generate wallet seed right away
-async function load() {
-  await wasm_bindgen();
-  generate_wallet();
-}
-
-load();
+const { KeyPair, get_languages } = wasm_bindgen;
 
 // initialize elements for easier access and reuse
 const lbl_testnet = document.getElementById("lbl_testnet");
@@ -23,6 +15,24 @@ const select_network = document.getElementById("select_network");
 const txt_amount = document.getElementById("txt_amount");
 const lbl_amount = document.getElementById("lbl_amount");
 const lbl_amount_value = document.getElementById("lbl_amount_value");
+const select_language = document.getElementById("select_language");
+
+// load wasm wallet and generate wallet seed right away
+async function load() {
+  await wasm_bindgen();
+
+  const languages = get_languages();
+  languages.forEach((lang, idx) => {
+    const option = document.createElement(`option`);
+    option.value = idx;
+    option.text = lang;
+    select_language.append(option);
+  });
+
+  generate_wallet();
+}
+
+load();
 
 function generate_wallet() {
   const network = select_network.value;
@@ -34,10 +44,12 @@ function generate_wallet() {
     lbl_testnet.classList.remove("hidden");
   }
 
+  const language_idx = select_language.value;
+
   const key_pair = new KeyPair(mainnet);
   const addr = key_pair.address();
   const private_key = key_pair.secret();
-  const seed = key_pair.seed("en");
+  const seed = key_pair.seed(language_idx);
 
   set_address_qrcode(addr);
   set_private_key_qrcode(private_key);
@@ -98,4 +110,25 @@ txt_amount.addEventListener('input', (e) => {
   } else {
     lbl_amount.classList.add("hidden");
   }
+});
+
+function translate_app(lang) {
+  const elements = document.body.querySelectorAll('[data-t], [data-t-title], [data-t-placeholder]');
+  elements.forEach((element) => {
+    let en_text = element.getAttribute('data-t');
+    if (en_text) element.textContent = translate_text(en_text, lang);
+
+    en_text = element.getAttribute('data-t-title');
+    if (en_text) element.title = translate_text(en_text, lang);
+
+    en_text = element.getAttribute('data-t-placeholder');
+    if (en_text) element.placeholder = translate_text(en_text, lang);
+  });
+}
+
+select_language.addEventListener('change', (e) => {
+  generate_wallet();
+  const element = e.target;
+  const lang = element.options[element.selectedIndex].text;
+  translate_app(lang.toLowerCase());
 });
