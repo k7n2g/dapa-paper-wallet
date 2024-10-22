@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>XELIS Paper Wallet</title>
+  <link rel="stylesheet" href="/public/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="XELIS Paper Wallet">
+  <meta name="keywords" content="xelis, generator, paper, wallet, offline">
+</head>
+
+<body>
+  <div class="no-print controls">
+    <select id="select_language" title="Choose seed language." data-t-title="Choose seed language.">
+    </select>
+    <select id="select_network" title="Change XELIS network." data-t-title="Change XELIS network.">
+      <option value="mainnet" data-t="Mainnet">Mainnet</option>
+      <option value="testnet" data-t="Testnet">Testnet</option>
+    </select>
+    <button id="btn_generate" title="Generate a new wallet seed." data-t-title="Generate a new wallet seed.">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" width="20px"
+        version="1.1" id="Capa_1" viewBox="0 0 32 32" fill="currentColor">
+        <path
+          d="M19.945,22l6.008-8L32,22h-4v2c0,3.309-2.691,6-6,6H10c-3.309,0-6-2.691-6-6v-2h4v2     c0,1.102,0.898,2,2,2h12c1.102,0,2-0.898,2-2v-2H19.945z" />
+        <path
+          d="M12.055,10l-6.008,8L0,10h4V8c0-3.309,2.691-6,6-6h12c3.309,0,6,2.691,6,6v2h-4V8     c0-1.102-0.898-2-2-2H10C8.898,6,8,6.898,8,8v2H12.055z" />
+      </svg>
+      <span data-t="Generate">Generate</span>
+    </button>
+    <input id="txt_amount" type="text" placeholder="Amount" title="Display the XEL amount on the wallet paper."
+      data-t-title="Display the XEL amount on the wallet paper." data-t-placeholder="Amount" />
+    <select id="select_bg" title="Change wallet background paper." data-t-title="Change wallet background paper.">
+      <option value="/public/bg/bg_1.webp" data-t="Background 1">Background 1</option>
+      <option value="/public/bg/bg_2.webp" data-t="Background 2">Background 2</option>
+      <option value="/public/bg/bg_3.webp" data-t="Background 3">Background 3</option>
+      <option value="/public/bg/bg_4.webp" data-t="Background 4">Background 4</option>
+      <option value="/public/bg/bg_5.webp" data-t="Background 5">Background 5</option>
+      <option value="/public/bg/bg_6.webp" data-t="Background 6">Background 6</option>
+    </select>
+    <button id="btn_print" onclick="print()" title="Print the wallet paper." data-t-title="Print the wallet paper.">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M17 7H7V6h10v1zm0 12H7v-6h10v6zm2-12V3H5v4H1v8.996C1 17.103 1.897 18 3.004 18H5v3h14v-3h1.996A2.004 2.004 0 0 0 23 15.996V7h-4z"
+          fill="currentColor" />
+      </svg>
+      <span data-t="Print">Print</span>
+    </button>
+  </div>
+  <div class="wallet-paper">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%"
+      viewBox="0 0 952 472" fill="none">
+      <g id="image 2">
+        <rect width="952" height="472" transform="matrix(1 0 0 -1 0 472)" fill="url(#pattern0_1_3)" />
+        <rect width="952" height="472" transform="matrix(1 0 0 -1 0 472)" fill="url(#paint0_linear_1_3)" />
+      </g>
+      <g id="Rectangle 66" filter="url(#filter0_b_1_3)">
+        <rect x="782" y="-2" width="170" height="283" fill="#02FFCF" fill-opacity="0.24" />
+      </g>
+      <g id="Rectangle 67" filter="url(#filter1_b_1_3)">
+        <rect y="-2" width="170" height="283" fill="#02FFCF" fill-opacity="0.24" />
+      </g>
+      <rect id="qr-code 1" x="17" y="60" width="136" height="136" fill="url(#pattern1_1_3)" />
+      <text fill="white" font-size="16" font-weight="bold" letter-spacing="0em" text-anchor="middle" x="85" y="220">
+        <tspan data-t="ADDRESS">ADDRESS</tspan>
+      </text>
+      <text fill="white" font-size="16" font-weight="bold" letter-spacing="0em" text-anchor="middle" x="868" y="220">
+        <tspan data-t="PRIVATE KEY">PRIVATE KEY</tspan>
+      </text>
+      <rect id="qr-code 2" x="800" y="60" width="136" height="136" fill="url(#pattern2_1_3)" />
+      <g id="Rectangle 68" filter="url(#filter2_b_1_3)">
+        <rect y="281" width="952" height="191" fill="black" fill-opacity="0.5" />
+      </g>
+      <text
+        id="toto vehicle africa speed lonely basic word traffic level plank lower down up jewel leverage music echo bravo johny yoyo book table"
+        fill="white" font-size="14" letter-spacing="0em">
+        <tspan x="17" y="432" id="seed_value_line_1"></tspan>
+        <tspan x="17" y="452" id="seed_value_line_2"></tspan>
+      </text>
+      <text id="Seed" fill="white" font-size="20" font-weight="bold" letter-spacing="0em">
+        <tspan x="17" y="405" data-t="Seed">Seed</tspan>
+      </text>
+      <text id="Address" fill="white" font-size="20" font-weight="bold" letter-spacing="0em">
+        <tspan x="17" y="316.273" data-t="Address">Address</tspan>
+      </text>
+      <text id="Private Key" fill="white" font-size="20" font-weight="bold" letter-spacing="0em">
+        <tspan x="17" y="352.273" data-t="Private Key">Private Key</tspan>
+      </text>
+      <g id="Ellipse 1" filter="url(#filter3_b_1_3)">
+        <circle cx="475" cy="139" r="105" fill="black" fill-opacity="0.5" />
+      </g>
+      <g xmlns="http://www.w3.org/2000/svg" id="Rectangle 64 (Stroke)">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M475 209L547 136.754L481.507 71.0376L491.644 95.6579L532.6 136.754L475 194.551L417.4 136.754L458.449 94.9862L468.53 71L403 136.754L475 209Z"
+          fill="#02FFCF" />
+        <path d="M475 194.551L468.53 71L458.449 94.9862L475 194.551Z" fill="#02FFCF" />
+        <path d="M481.507 71.0376L475 194.551L491.644 95.6579L481.507 71.0376Z" fill="#02FFCF" />
+      </g>
+      <text fill="white" text-anchor="end" font-size="16" letter-spacing="0em">
+        <tspan x="934" y="315" t id="address_value"></tspan>
+      </text>
+      <text fill="white" text-anchor="end" font-size="16" letter-spacing="0em">
+        <tspan x="934" y="350" id="private_key_value"></tspan>
+      </text>
+      <text id="XELIS Paper Wallet" fill="white" font-size="30" font-weight="bold" letter-spacing="0em"
+        text-anchor="middle" x="476" y="250">
+        <tspan data-t="XELIS Paper Wallet">XELIS Paper Wallet</tspan>
+      </text>
+      <g id="lbl_testnet" class="hidden">
+        <rect y="0" x="400" width="150" height="40" fill="red" />
+        <text fill="white" font-size="20" font-weight="bold" text-anchor="middle" letter-spacing="0em" x="475" y="28"
+          data-t="TESTNET">TESTNET</text>
+      </g>
+      <g id="lbl_amount" class="hidden">
+        <rect y="367" x="785" width="150" height="40" fill="white" />
+        <text fill="gray" font-size="20" font-weight="bold" letter-spacing="0em">
+          <tspan x="795" y="395" id="lbl_amount_value"></tspan>
+        </text>
+      </g>
+      <defs>
+        <pattern id="pattern0_1_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlink:href="#bg_img" transform="matrix(0.0005 0 0 0.00101059 0 -0.257945)" />
+        </pattern>
+        <filter id="filter0_b_1_3" x="761.3" y="-22.7" width="211.4" height="324.4" filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feGaussianBlur in="BackgroundImageFix" stdDeviation="10.35" />
+          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_3" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_3" result="shape" />
+        </filter>
+        <filter id="filter1_b_1_3" x="-20.7" y="-22.7" width="211.4" height="324.4" filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feGaussianBlur in="BackgroundImageFix" stdDeviation="10.35" />
+          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_3" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_3" result="shape" />
+        </filter>
+        <pattern id="pattern1_1_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlink:href="#qrcode_address_img" transform="scale(0.000625)" />
+        </pattern>
+        <pattern id="pattern2_1_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlink:href="#qrcode_private_key_img" transform="scale(0.000625)" />
+        </pattern>
+        <filter id="filter2_b_1_3" x="-15" y="266" width="982" height="221" filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feGaussianBlur in="BackgroundImageFix" stdDeviation="7.5" />
+          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_3" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_3" result="shape" />
+        </filter>
+        <filter id="filter3_b_1_3" x="339" y="19" width="240" height="240" filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feGaussianBlur in="BackgroundImageFix" stdDeviation="7.5" />
+          <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_1_3" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_1_3" result="shape" />
+        </filter>
+        <linearGradient id="paint0_linear_1_3" x1="477" y1="0" x2="477" y2="472" gradientUnits="userSpaceOnUse">
+          <stop stop-opacity="0" />
+          <stop offset="1" />
+        </linearGradient>
+        <image id="bg_img" width="2000" height="1500" xlink:href="/public/bg/bg_1.webp" />
+        <image id="qrcode_address_img" width="1600" height="1600" xlink:href="" />
+        <image id="qrcode_private_key_img" width="1600" height="1600" xlink:href="" />
+      </defs>
+    </svg>
+  </div>
+  <div class="footer no-print">
+    <div data-t="XELIS © 2024 Copyright">XELIS © 2024 Copyright</div>
+    <div>
+      <span data-t="This program only makes a server request once, to obtain the program code and assets. The program operates without
+      further server communication.">This program only makes a server request once, to obtain the program code and
+        assets. The program operates without further server communication.</span>
+      <span data-t="Source code available at this">Source code available at this</span>
+      <a href="https://github.com/xelis-project/xelis-paper-wallet" target="_blank">Github repo</a>.
+    </div>
+  </div>
+  <script src="/public/qrious.min.js"></script>
+  <script src="/public/xelis_paper_wallet.js"></script>
+  <script src="/public/lang.js"></script>
+  <script src="/public/index.js"></script>
+</body>
+
+</html>

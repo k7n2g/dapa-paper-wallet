@@ -1,0 +1,4 @@
+pkg/
+xelis-paper-wallet/target/
+public/xelis_paper_wallet_bg.wasm
+public/xelis_paper_wallet.js
