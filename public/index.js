@@ -16,6 +16,8 @@ const txt_amount = document.getElementById("txt_amount");
 const lbl_amount = document.getElementById("lbl_amount");
 const lbl_amount_value = document.getElementById("lbl_amount_value");
 const select_language = document.getElementById("select_language");
+const footer_msg = document.getElementById("footer_msg");
+const btn_download = document.getElementById("btn_download");
 
 // load wasm wallet and generate wallet seed right away
 async function load() {
@@ -132,3 +134,9 @@ select_language.addEventListener('change', (e) => {
   const lang = element.options[element.selectedIndex].text;
   translate_app(lang.toLowerCase());
 });
+
+// hide bottom msg and display download button if loaded from webserver instead of an app
+if (window.__TAURI__) {
+  footer_msg.classList.add("hidden");
+  btn_download.classList.add("hidden");
+}

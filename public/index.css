@@ -1,16 +1,17 @@
 @font-face {
   font-family: "Helios";
-  src: url("/public/fonts/HeliosExtC_Regular.otf");
+  src: url("/fonts/HeliosExtC_Regular.otf");
 }
 
 @font-face {
   font-family: "Helios Bold";
-  src: url("/public/fonts/HeliosExtC_Bold.otf");
+  src: url("/fonts/HeliosExtC_Bold.otf");
 }
 
 body {
   background-color: #181818;
   margin: 0;
+  min-width: 350px;
 }
 
 @media print {
@@ -26,7 +27,12 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   margin: 1rem;
-  justify-content: center;
+}
+
+@media (min-width: 700px) {
+  .controls {
+    justify-content: center;
+  }
 }
 
 .controls button {
@@ -38,6 +44,7 @@ body {
   flex-direction: row;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: .5rem;
   border-radius: 0;
 }
@@ -63,7 +70,8 @@ body {
   background: black;
   color: rgb(206, 206, 206);
   border-radius: 0;
-  max-width: 100px;
+  max-width: 120px;
+  box-sizing: border-box;
 }
 
 /* Wallet paper */
@@ -96,5 +104,5 @@ body {
 
 /* Misc */
 .hidden {
-  display: none;
+  display: none !important;
 }
