@@ -12,6 +12,8 @@ body {
   background-color: #181818;
   margin: 0;
   min-width: 350px;
+  transform-origin: top center;
+  overflow-x: hidden;
 }
 
 @media print {
@@ -19,6 +21,26 @@ body {
     display: none !important;
   }
 }
+
+/* Scale the app for big monitors */
+@media (min-width: 1440px) {
+  body {
+    transform: scale(1.2);
+  }
+}
+
+@media (min-width: 2560px) {
+  body {
+    transform: scale(1.5);
+  }
+}
+
+@media (min-width: 3440px) {
+  body {
+    transform: scale(2);
+  }
+}
+
 
 /* Controls */
 .controls {
@@ -96,7 +118,7 @@ body {
   font-family: "arial";
 }
 
-.footer > :last-child {
+.footer> :last-child {
   margin-top: .25rem;
   font-size: 13px;
   color: #6d6d6d;
