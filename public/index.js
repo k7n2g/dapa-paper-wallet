@@ -18,6 +18,7 @@ const lbl_amount_value = document.getElementById("lbl_amount_value");
 const select_language = document.getElementById("select_language");
 const footer_msg = document.getElementById("footer_msg");
 const btn_download = document.getElementById("btn_download");
+const modal_download = document.getElementById("modal_download");
 
 // load wasm wallet and generate wallet seed right away
 async function load() {
@@ -140,3 +141,14 @@ if (window.__TAURI__) {
   footer_msg.classList.add("hidden");
   btn_download.classList.add("hidden");
 }
+
+function show_download_modal() {
+  modal_download.classList.remove("hidden");
+}
+
+// hide modal when click outside of .modal-content
+modal_download.addEventListener('click', (e) => {
+  if (e.target.classList.contains("modal-backdrop")) {
+    modal_download.classList.add("hidden");
+  }
+});

@@ -17,13 +17,14 @@
 
 <body>
   <div class="no-print controls">
-    <select id="select_language" title="Choose seed language." data-t-title="Choose seed language.">
+    <select id="select_language" class="select" title="Choose seed language." data-t-title="Choose seed language.">
     </select>
-    <select id="select_network" title="Change XELIS network." data-t-title="Change XELIS network.">
+    <select id="select_network" class="select" title="Change XELIS network." data-t-title="Change XELIS network.">
       <option value="mainnet" data-t="Mainnet">Mainnet</option>
       <option value="testnet" data-t="Testnet">Testnet</option>
     </select>
-    <button id="btn_generate" title="Generate a new wallet seed." data-t-title="Generate a new wallet seed.">
+    <button id="btn_generate" class="button" title="Generate a new wallet seed."
+      data-t-title="Generate a new wallet seed.">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="20px" width="20px"
         version="1.1" id="Capa_1" viewBox="0 0 32 32" fill="currentColor">
         <path
@@ -33,9 +34,11 @@
       </svg>
       <span data-t="Generate">Generate</span>
     </button>
-    <input id="txt_amount" type="text" placeholder="Amount" title="Display the XEL amount on the wallet paper."
-      data-t-title="Display the XEL amount on the wallet paper." data-t-placeholder="Amount" />
-    <select id="select_bg" title="Change wallet background paper." data-t-title="Change wallet background paper.">
+    <input id="txt_amount" class="input" type="text" placeholder="Amount"
+      title="Display the XEL amount on the wallet paper." data-t-title="Display the XEL amount on the wallet paper."
+      data-t-placeholder="Amount" />
+    <select id="select_bg" class="select" title="Change wallet background paper."
+      data-t-title="Change wallet background paper.">
       <option value="/bg/bg_1.webp" data-t="Background 1">Background 1</option>
       <option value="/bg/bg_2.webp" data-t="Background 2">Background 2</option>
       <option value="/bg/bg_3.webp" data-t="Background 3">Background 3</option>
@@ -43,7 +46,8 @@
       <option value="/bg/bg_5.webp" data-t="Background 5">Background 5</option>
       <option value="/bg/bg_6.webp" data-t="Background 6">Background 6</option>
     </select>
-    <button id="btn_print" onclick="print()" title="Print the wallet paper." data-t-title="Print the wallet paper.">
+    <button id="btn_print" class="button" onclick="print()" title="Print the wallet paper."
+      data-t-title="Print the wallet paper.">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
           d="M17 7H7V6h10v1zm0 12H7v-6h10v6zm2-12V3H5v4H1v8.996C1 17.103 1.897 18 3.004 18H5v3h14v-3h1.996A2.004 2.004 0 0 0 23 15.996V7h-4z"
@@ -51,7 +55,7 @@
       </svg>
       <span data-t="Print">Print</span>
     </button>
-    <button id="btn_download" onclick="">
+    <button id="btn_download" class="button" onclick="show_download_modal()">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <path d="M12 16L12 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M9 13L11.913 15.913V15.913C11.961 15.961 12.039 15.961 12.087 15.913V15.913L15 13" stroke="white"
@@ -59,8 +63,48 @@
         <path d="M3 15L3 16L3 19C3 20.1046 3.89543 21 5 21L19 21C20.1046 21 21 20.1046 21 19L21 16L21 15" stroke="white"
           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
-      <span>Download offline app</span>
+      <span>Download app</span>
     </button>
+  </div>
+  <div id="modal_download" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content flex-column">
+      <div class="modal-h1">Executables - For offline use</div>
+      <div class="flex-column">
+        <div class="modal-h2">Windows</div>
+        <div class="flex-column">
+          <a class="button" href="/executables/XELIS Paper Wallet_0.1.0_x64.exe">
+            <svg width="16px" height="16px">
+              <use href="#windows"></use>
+            </svg>
+            <span>XELIS Paper Wallet_0.1.0_x64.exe</span>
+          </a>
+          <a class="button" href="/executables/XELIS Paper Wallet_0.1.0_x64_en-US.msi">
+            <svg width="16px" height="16px">
+              <use href="#windows"></use>
+            </svg>
+            <span>XELIS Paper Wallet_0.1.0_x64_en-US.msi</span></a>
+          <a class="button" href="/executables/XELIS Paper Wallet_0.1.0_x64-setup.exe">
+            <svg width="16px" height="16px">
+              <use href="#windows"></use>
+            </svg>XELIS Paper
+            <span>Wallet_0.1.0_x64-setup.exe</span>
+          </a>
+        </div>
+      </div>
+      <div class="flex-column">
+        <div class="modal-h2">Linux</div>
+        <div class="flex-column">
+          TODO
+        </div>
+      </div>
+      <div class="flex-column">
+        <div class="modal-h2">MacOS</div>
+        <div class="flex-column">
+          TODO
+        </div>
+      </div>
+    </div>
   </div>
   <div class="wallet-paper">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%"
@@ -190,6 +234,19 @@
       <a href="https://github.com/xelis-project/xelis-paper-wallet" target="_blank">Github repo</a>.
     </div>
   </div>
+  <svg class="hidden">
+    <!-- Windows icon -->
+    <symbol id="windows" viewBox="0 0 20 20">
+      <g transform="translate(-60.000000, -7439.000000)" fill="white">
+        <g transform="translate(56.000000, 160.000000)">
+          <path
+            d="M13.1458647,7289.43426 C13.1508772,7291.43316 13.1568922,7294.82929 13.1619048,7297.46884 C16.7759398,7297.95757 20.3899749,7298.4613 23.997995,7299 C23.997995,7295.84873 24.002005,7292.71146 23.997995,7289.71311 C20.3809524,7289.71311 16.7649123,7289.43426 13.1458647,7289.43426 M4,7289.43526 L4,7296.22153 C6.72581454,7296.58933 9.45162907,7296.94113 12.1724311,7297.34291 C12.1774436,7294.71736 12.1704261,7292.0908 12.1704261,7289.46524 C9.44661654,7289.47024 6.72380952,7289.42627 4,7289.43526 M4,7281.84344 L4,7288.61071 C6.72581454,7288.61771 9.45162907,7288.57673 12.1774436,7288.57973 C12.1754386,7285.96017 12.1754386,7283.34361 12.1724311,7280.72405 C9.44461153,7281.06486 6.71679198,7281.42567 4,7281.84344 M24,7288.47179 C20.3879699,7288.48578 16.7759398,7288.54075 13.1619048,7288.55175 C13.1598997,7285.88921 13.1598997,7283.22967 13.1619048,7280.56914 C16.7689223,7280.01844 20.3839599,7279.50072 23.997995,7279 C24,7282.15826 23.997995,7285.31353 24,7288.47179">
+          </path>
+        </g>
+      </g>
+    </symbol>
+    <!-- TODO: other icons for reuse -->
+  </svg>
   <script src="/qrious.min.js"></script>
   <script src="/xelis_paper_wallet.js"></script>
   <script src="/lang.js"></script>
