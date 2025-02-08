@@ -2,7 +2,7 @@
 
 Generate a paper wallet for XELIS by creating a new key pair and printing it for storage.
 
-Directly available and ready to use at <https://wallet-paper.xelis.io>.
+Directly available and ready to use at <https://paperwallet.xelis.io/>.
 
 ## Run locally
 
