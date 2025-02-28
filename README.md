@@ -1,8 +1,8 @@
-# XELIS Paper Wallet
+# DAPA Paper Wallet
 
-Generate a paper wallet for XELIS by creating a new key pair and printing it for storage.
+Generate a paper wallet for DAPA by creating a new key pair and printing it for storage.
 
-Directly available and ready to use at <https://paperwallet.xelis.io/>.
+Directly available and ready to use at <https://paperwallet.dapahe.com/>.
 
 ## Run locally
 
